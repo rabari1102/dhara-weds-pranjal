@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Send Invitations · Dhara ❦ Pranjal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&amp;family=EB+Garamond:wght@400;500;600&amp;family=Rasa:wght@400;500;600;700&amp;family=Tiro+Devanagari+Hindi&amp;display=swap" rel="stylesheet">
+<style>
+/* layout: one column of cards — type a name, see the nameplate, send the personal link */
+:root {
+  --rani: #b8336a; --rani-d: #7d1f48; --maroon: #5a1a33; --ink: #4a2433; --ink-2: #7a5566;
+  --gold: #d9b25a; --paper: #fffaf5; --blush: #fbeef0; --wa: #1f7a52;
+  --ui: 'Rasa', 'Tiro Devanagari Hindi', 'EB Garamond', Georgia, serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--ui); color: var(--ink); background: #f3d9dc radial-gradient(900px 500px at 50% 0, #fbeef0, #ecc9cf 70%, #e0b4bd) fixed; font-size: 17px; line-height: 1.5; }
+main { max-width: 560px; margin: 0 auto; padding: 22px 16px 60px; }
+header { text-align: center; padding: 10px 0 6px; }
+.mono { font-family: 'Cinzel', serif; letter-spacing: .08em; color: var(--rani); font-size: 14px; margin: 0; }
+h1 { margin: 4px 0 0; font-size: 30px; line-height: 1.2; color: var(--rani-d); font-weight: 700; text-wrap: balance; }
+.lead { margin: 6px auto 0; max-width: 32em; color: var(--ink-2); font-size: 16px; }
+.card { margin-top: 18px; padding: 18px 16px; border-radius: 20px; background: var(--paper); border: 1px solid rgba(201, 162, 75, .5); box-shadow: 0 12px 30px rgba(125, 31, 72, .12); }
+.card h2 { margin: 0 0 12px; font-size: 20px; color: var(--rani-d); display: flex; align-items: center; gap: 8px; }
+.card h2 span { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--rani); color: #fff; font-size: 14px; font-family: 'Cinzel', serif; }
+label, .lab { display: block; font-weight: 700; font-size: 14px; color: var(--ink-2); margin: 12px 0 6px; }
+input, textarea { width: 100%; font: inherit; color: var(--ink); background: #fff; border: 1.5px solid rgba(122, 85, 102, .28); border-radius: 12px; padding: 10px 12px; }
+input:focus, textarea:focus { outline: none; border-color: var(--rani); box-shadow: 0 0 0 3px rgba(184, 51, 106, .12); }
+textarea { resize: vertical; min-height: 92px; font-size: 15.5px; }
+.hint { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-2); }
+.seg { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: #fff; border: 1.5px solid rgba(122, 85, 102, .2); width: max-content; max-width: 100%; }
+.seg button { font: inherit; font-size: 15px; font-weight: 600; padding: 6px 14px; border: 0; border-radius: 999px; background: none; color: var(--rani-d); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--rani); color: #fff; }
+.seg button:lang(hi) { font-family: 'Tiro Devanagari Hindi', serif; }
+.preview { margin-top: 16px; padding: 22px 14px 18px; border-radius: 16px; background: linear-gradient(#f4c9cf, #e9b2bb); display: grid; place-items: center; }
+.np { width: min(100%, 290px); text-align: center; transform-origin: 50% 0; animation: swing 4.6s ease-in-out infinite; }
+.np svg.str { display: block; width: 70%; height: 26px; margin: 0 auto -2px; }
+.np-card { padding: 12px 14px; border-radius: 16px; background: radial-gradient(circle at 50% 0, #fffdf8, #fdf0e6); border: 2px solid var(--gold); box-shadow: 0 12px 24px rgba(90, 26, 51, .3), inset 0 0 0 4px #fffaf3, inset 0 0 0 5px rgba(217, 178, 90, .6); }
+.np-label { margin: 0; font-size: 12.5px; font-weight: 700; letter-spacing: .1em; color: var(--rani); }
+.np-name { margin: 6px 0 4px; font-weight: 700; font-size: var(--np-size, 26px); line-height: 1.22; color: var(--maroon); overflow-wrap: anywhere; min-height: 1.2em; }
+.np-name:empty::before { content: '…'; color: #c9a9b3; }
+.np-foot { margin: 0; font-size: 12.5px; color: var(--ink-2); font-weight: 600; }
+@keyframes swing { 0%, 100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+.linkbox { display: flex; gap: 8px; margin-top: 14px; }
+.linkbox input { font-size: 14px; color: var(--ink-2); background: #fdf7f8; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 16px; border-radius: 999px; border: 1.5px solid rgba(184, 51, 106, .45); background: #fff; color: var(--rani-d); font: inherit; font-size: 15px; font-weight: 700; text-decoration: none; cursor: pointer; transition: background .2s, color .2s, transform .15s; }
+.btn:hover { background: var(--rani); color: #fff; }
+.btn:active { transform: scale(.97); }
+.btn.wa { background: var(--wa); border-color: var(--wa); color: #fff; }
+.btn.wa:hover { background: #18663f; }
+.btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.btn svg { width: 17px; height: 17px; }
+.list { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.list li { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; align-items: center; padding: 10px 12px; border-radius: 14px; background: #fff; border: 1px solid rgba(201, 162, 75, .4); }
+.list .who { font-weight: 700; color: var(--maroon); overflow-wrap: anywhere; }
+.list .num { font-size: 13.5px; color: var(--ink-2); font-weight: 500; }
+.list .acts { display: flex; gap: 6px; }
+.list .acts .btn { padding: 7px 11px; font-size: 13.5px; }
+.list li.sent { background: #effaf2; border-color: rgba(31, 122, 82, .35); }
+.sentmark { grid-column: 1 / -1; font-size: 13px; color: var(--wa); font-weight: 700; display: none; }
+.list li.sent .sentmark { display: block; }
+.count { margin: 12px 0 0; font-size: 14px; color: var(--ink-2); }
+details { margin-top: 16px; }
+summary { cursor: pointer; color: var(--ink-2); font-weight: 600; font-size: 14.5px; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 16px); padding: 10px 18px; border-radius: 999px; background: var(--maroon); color: #fff; font-size: 15px; opacity: 0; pointer-events: none; transition: .3s; max-width: 92vw; text-align: center; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+:focus-visible { outline: 2px solid var(--rani); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="mono">DHARA ❦ PRANJAL</p>
+    <h1>Send personal invitations</h1>
+    <p class="lead">Type the guest’s name exactly as it should appear. It hangs on the palace doors, at the centre of the first screen, and fills in their RSVP.</p>
+  </header>
+
+  <section class="card" aria-labelledby="one-h">
+    <h2 id="one-h"><span>1</span>One guest</h2>
+    <label for="name">Guest name (full, any language)</label>
+    <input id="name" type="text" maxlength="90" placeholder="e.g. શ્રી રમેશભાઈ પટેલ પરિવાર" autocomplete="off">
+    <label for="mob">WhatsApp number (optional)</label>
+    <input id="mob" type="tel" inputmode="tel" placeholder="98765 43210">
+    <p class="hint">With a number, WhatsApp opens that person’s chat. Without one, you pick the contact.</p>
+    <span class="lab" id="lang-l">Invitation opens in</span>
+    <div class="seg" role="group" aria-labelledby="lang-l">
+      <button type="button" data-l="gu" lang="gu" aria-pressed="true">ગુજરાતી</button>
+      <button type="button" data-l="hi" lang="hi" aria-pressed="false">हिंदी</button>
+      <button type="button" data-l="en" aria-pressed="false">English</button>
+    </div>
+
+    <div class="preview" aria-label="How the name looks on the doors">
+      <div class="np">
+        <svg class="str" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M100 6L14 40M100 6L186 40" stroke="#c0392b" stroke-width="2" fill="none"/><circle cx="100" cy="6" r="5" fill="#d9b25a" stroke="#a87a2c"/></svg>
+        <div class="np-card"><p class="np-label" id="pv-label"></p><p class="np-name" id="pv-name"></p><p class="np-foot" id="pv-foot"></p></div>
+      </div>
+    </div>
+
+    <label for="msg">WhatsApp message</label>
+    <textarea id="msg" rows="9"></textarea>
+    <p class="hint">{name} and {link} are filled in automatically. Edit the rest as you like.</p>
+
+    <div class="linkbox"><input id="link" type="text" readonly aria-label="Personal link"></div>
+    <div class="row">
+      <a id="send" class="btn wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l1.2-3.6A8 8 0 1 1 8.6 18.6z"/></svg>Send on WhatsApp</a>
+      <button id="copy" class="btn" type="button">Copy link</button>
+      <a id="open" class="btn" target="_blank" rel="noopener">Preview</a>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="many-h">
+    <h2 id="many-h"><span>2</span>Many guests at once</h2>
+    <label for="bulk">One guest per line. Add a comma and the number if you have it.</label>
+    <textarea id="bulk" rows="6" placeholder="શ્રી રમેશભાઈ પટેલ પરિવાર, 98765 43210&#10;Mehta Family, 9123456780&#10;श्री अनिल श्रीवास्तव जी"></textarea>
+    <div class="row"><button id="make" class="btn" type="button">Make links</button><button id="copyall" class="btn" type="button" aria-disabled="true">Copy all links</button></div>
+    <p id="count" class="count" hidden></p>
+    <ul id="list" class="list"></ul>
+  </section>
+
+  <details>
+    <summary>Website address</summary>
+    <label for="base">Links point to</label>
+    <input id="base" type="url">
+    <p class="hint">Filled in automatically from where this page is hosted.</p>
+  </details>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const TXT = {
+    gu: { label: 'ખાસ આમંત્રણ', foot: 'સહપરિવાર પધારશોજી',
+      msg: 'જય શ્રી કૃષ્ણ 🙏\n{name},\n\nચિ. ધારા અને ચિ. પ્રાંજલના શુભ લગ્ન પ્રસંગે આપને સહપરિવાર ભાવભર્યું આમંત્રણ છે.\n📅 શુક્રવાર, 11/12/2026\n📍 લોહાણા મહાજન વાડી, સુરેન્દ્રનગર\n\nઆમંત્રણ પત્રિકા ખોલો 👇\n{link}\n\n– રમેશભાઈ પિતાંબરભાઈ પોપટ પરિવાર' },
+    hi: { label: 'विशेष निमंत्रण', foot: 'सपरिवार पधारें',
+      msg: 'जय श्री कृष्ण 🙏\n{name},\n\nचि. धारा और चि. प्रांजल के शुभ विवाह में आपको सपरिवार सादर निमंत्रण है।\n📅 शुक्रवार, 11/12/2026\n📍 लोहाणा महाजन वाडी, सुरेंद्रनगर\n\nनिमंत्रण पत्रिका खोलें 👇\n{link}\n\n– रमेशभाई पीतांबरभाई पोपट परिवार' },
+    en: { label: 'SPECIALLY INVITED', foot: 'with family',
+      msg: 'Namaste 🙏\n{name},\n\nYou and your family are warmly invited to the wedding of Chi. Dhara & Chi. Pranjal.\n📅 Friday, 11 December 2026\n📍 Lohana Mahajan Wadi, Surendranagar\n\nOpen your invitation 👇\n{link}\n\n– Rameshbhai Pitambarbhai Popat & family' },
+  };
+  let lang = 'gu', msgEdited = false;
+  const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+  const sent = store.get('dp-sent', {});
+
+  const defaultBase = () => {
+    if (/^https?:$/.test(location.protocol) && !/claude/i.test(location.hostname)) return location.origin + location.pathname.replace(/send(\.html)?$/, '');
+    return 'https://dhara-weds-pranjal.vercel.app/';
+  };
+  $('#base').value = store.get('dp-base', '') || defaultBase();
+
+  const b64u = (str) => { const bytes = new TextEncoder().encode(str); let bin = ''; bytes.forEach((b) => (bin += String.fromCharCode(b))); return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); };
+  const clean = (s) => s.replace(/\s+/g, ' ').trim();
+  const base = () => { let b = $('#base').value.trim() || defaultBase(); if (!/\/$/.test(b) && !/\.html$/.test(b)) b += '/'; return b; };
+  const linkFor = (name, l = lang) => `${base()}#g=${b64u(clean(name))}&l=${l}`;
+  const phone = (raw) => { let d = (raw || '').replace(/\D/g, ''); if (d.length === 11 && d[0] === '0') d = d.slice(1); if (d.length === 10) d = '91' + d; return d; };
+  const message = (name, link) => ($('#msg').value || TXT[lang].msg).replaceAll('{name}', clean(name)).replaceAll('{link}', link);
+  const waHref = (num, text) => `https://wa.me/${num}?text=${encodeURIComponent(text)}`;
+  let toastT; const toast = (m) => { const t = $('#toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2400); };
+  const copy = async (text, ok) => { try { await navigator.clipboard.writeText(text); toast(ok); } catch (e) { prompt('Copy this:', text); } };
+
+  function update() {
+    const name = clean($('#name').value);
+    $('#pv-label').textContent = TXT[lang].label; $('#pv-foot').textContent = TXT[lang].foot;
+    $('#pv-name').textContent = name;
+    $('#pv-name').style.setProperty('--np-size', `${Math.max(19, Math.min(30, 30 - ([...name].length - 14) * 0.55)).toFixed(1)}px`);
+    const link = name ? linkFor(name) : '';
+    $('#link').value = link || 'Type a name to make the link';
+    ['#send', '#copy', '#open'].forEach((s) => $(s).setAttribute('aria-disabled', String(!name)));
+    $('#open').href = link || '#';
+    $('#send').href = name ? waHref(phone($('#mob').value), message(name, link)) : '#';
+  }
+  function setLang(l) {
+    lang = l;
+    document.querySelectorAll('.seg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.l === l)));
+    if (!msgEdited) $('#msg').value = TXT[l].msg;
+    update(); if ($('#list').children.length) makeList();
+  }
+
+  function parseBulk() {
+    return $('#bulk').value.split('\n').map((line) => line.trim()).filter(Boolean).map((line) => {
+      const m = line.match(/^(.*?)[,;\t]\s*([+\d][\d\s-]{6,})\s*$/);
+      return m ? { name: clean(m[1]), num: phone(m[2]), raw: m[2].trim() } : { name: clean(line), num: '', raw: '' };
+    }).filter((g) => g.name);
+  }
+  function makeList() {
+    const gs = parseBulk(), ul = $('#list');
+    ul.innerHTML = '';
+    gs.forEach((g) => {
+      const link = linkFor(g.name), li = document.createElement('li');
+      if (sent[link]) li.classList.add('sent');
+      li.innerHTML = `<div><div class="who"></div><div class="num"></div></div><div class="acts"><a class="btn wa" target="_blank" rel="noopener">WhatsApp</a><button class="btn" type="button">Copy</button></div><div class="sentmark">✓ Sent</div>`;
+      li.querySelector('.who').textContent = g.name;
+      li.querySelector('.num').textContent = g.raw || 'No number: choose the chat in WhatsApp';
+      const wa = li.querySelector('a');
+      wa.href = waHref(g.num, message(g.name, link));
+      wa.addEventListener('click', () => { sent[link] = Date.now(); store.set('dp-sent', sent); li.classList.add('sent'); });
+      li.querySelector('button').addEventListener('click', () => copy(link, 'Link copied'));
+      li.querySelector('.sentmark').addEventListener('click', () => { delete sent[link]; store.set('dp-sent', sent); li.classList.remove('sent'); });
+      ul.appendChild(li);
+    });
+    $('#count').hidden = !gs.length;
+    $('#count').textContent = `${gs.length} link${gs.length === 1 ? '' : 's'} ready. Tap WhatsApp on each row to send; it’s marked ✓ Sent.`;
+    $('#copyall').setAttribute('aria-disabled', String(!gs.length));
+  }
+
+  $('#name').addEventListener('input', update);
+  $('#mob').addEventListener('input', update);
+  $('#msg').addEventListener('input', () => { msgEdited = true; update(); });
+  $('#base').addEventListener('change', () => { store.set('dp-base', $('#base').value.trim() === defaultBase() ? '' : $('#base').value.trim()); update(); if ($('#list').children.length) makeList(); });
+  document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.l)));
+  $('#copy').addEventListener('click', () => copy($('#link').value, 'Link copied'));
+  $('#make').addEventListener('click', makeList);
+  $('#copyall').addEventListener('click', () => copy(parseBulk().map((g) => `${g.name}\n${linkFor(g.name)}`).join('\n\n'), 'All links copied'));
+  setLang('gu');
+})();
+</script>
+</body>
+</html>
